@@ -21,7 +21,7 @@ public class Main {
         if (os != null && os.toLowerCase().indexOf("linux") > -1) {
         	 System.out.println("Yes, it is linux!");
         	 Process process = Runtime.getRuntime().exec(  
-	                 new String[] { "dmidecode","-t", "4", "|", "grep", "ID"});  
+	                  "dmidecode -t 4 | grep ID");  
 	         process.getOutputStream().close();  
 	         Scanner sc = new Scanner(process.getInputStream());
 	         String property = sc.next();
